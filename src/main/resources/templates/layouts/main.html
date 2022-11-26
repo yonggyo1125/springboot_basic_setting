@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<title th:if="${siteTitle == null}">TourGo</title>
+		<title th:unless="${siteTitle == null}" th:text="${siteTitle + ' : TourGo'}">TourGo</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+		<link rel="stylesheet" type="text/css" th:each="css : ${addCss}" th:href="@{/css/{css}.css(css=${css})}" />
+		<th:block layout:fragment="addCss"></th:block>
+		<script th:src="@{/js/layer.js}"></script>
+		<script th:src="@{/js/scripts.js}"></script>
+		<script th:each="script : ${addScript}" th:src="@{/js/{js}.js(js=${script})}"></script>
+		<th:block layout:fragment="addScript"></th:block>
+	</head>
+	<body th:class="${bodyClass}">
+		<header th:replace="outlines/header/main::header"></header>
+		<main layout:fragment="content" id='main_content'></main>
+		<footer th:replace="outlines/footer/main::footer"></footer>
+		<iframe name="ifrmProcess" class='dn'></iframe>
+	</body>
+</html>
