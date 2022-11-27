@@ -9,8 +9,8 @@
 		<th:block layout:fragment="addCss"></th:block>
 		<script th:src="@{/js/layer.js}"></script>
 		<script th:src="@{/js/scripts.js}"></script>
-		<script th:each="script : ${addScript}" th:src="@{/js/{js}.js(js=${script})}"></script>
 		<th:block layout:fragment="addScript"></th:block>
+		<script th:each="script : ${addScript}" th:src="@{/js/{js}.js(js=${script})}"></script>
 	</head>
 	<body th:class="${bodyClass}">
 		<header th:replace="outlines/header/main::header"></header>

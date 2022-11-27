@@ -2,7 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{layouts/main}">
+	<th:block layout:fragment="addScript">
+		<script type="text/javascript" src='//dapi.kakao.com/v2/maps/sdk.js?appkey=ecb744762773804f037af730d26d0ff4'></script>
+	</th:block>
 	<main layout:fragment="content">
-		<h1>메인페이지</h1>
+		<div id="map" style="width:500px;height:400px;"></div>
+		<ul id="search_result"></ul>
 	</main>
 </html>
