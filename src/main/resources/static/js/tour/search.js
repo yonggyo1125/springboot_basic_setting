@@ -18,6 +18,7 @@ const tourGo = {
 			if (xhr.status == 200 && xhr.readyState == XMLHttpRequest.DONE) {
 				const items = JSON.parse(xhr.responseText);
 				const ul = document.getElementById("search_result");
+				ul.innerHTML = "";
 				for (const item of items) {
 					const li = document.createElement("li");
 					li.innerHTML = `
